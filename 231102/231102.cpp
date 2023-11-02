@@ -103,5 +103,5 @@ int main()
     swap_v(a, b);
     printf("[swqp_v] 결과값 a = %d  b = %d\n", a, b); // a=10, b=20 
 	swap_p(&a, &b);
-	printf("[swqp_p] 결과값 a = %d  b = %d\n", a, b); // a=20, b=10
+	printf("[swqp_p] 결과값 a = %d  b = %d\n", a, b); 
 }
