@@ -1,4 +1,4 @@
-﻿//클래스
+﻿//클래스.
 #include <iostream>
 
 #define SQUARE(x) x*x // 매크로함수 선언
