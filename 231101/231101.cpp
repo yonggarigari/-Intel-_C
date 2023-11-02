@@ -1,4 +1,5 @@
-﻿#include <iostream>
+﻿//클래스
+#include <iostream>
 
 #define SQUARE(x) x*x // 매크로함수 선언
 // 함수의 오버로딩 조건(반환값은 동일한 형태)을 무시하는 특징이 있음
