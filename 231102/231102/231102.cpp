@@ -110,15 +110,15 @@ int main()
      double a = p1.area(p2);
      double d1 = p1.Dist(p1, p2);*/
 
-        int a(10), b(20); 
-        //a = 10; b = 20;
-        printf("초기값 a = %d  b = %d\n", a, b); 
-        //swap_v(a, b);
-        //printf("[swqp_v] 결과값 a = %d  b = %d\n", a, b); // a=10, b=20 
-        //swap_p(&a, &b);
-        //printf("[swqp_p] 결과값 a = %d  b = %d\n", a, b); // a=20, b=10
-        swap_r(a, b);
-        printf("[swqp_r] 결과값 a = %d  b = %d\n", a, b);
+    int a(10), b(20);
+    //a = 10; b = 20;
+    printf("초기값 a = %d  b = %d\n", a, b);
+    //swap_v(a, b);
+    //printf("[swqp_v] 결과값 a = %d  b = %d\n", a, b); // a=10, b=20 
+    //swap_p(&a, &b);
+    //printf("[swqp_p] 결과값 a = %d  b = %d\n", a, b); // a=20, b=10
+    swap_r(a, b);
+    printf("[swqp_r] 결과값 a = %d  b = %d\n", a, b);
 
     //int n = 1234;
     //int& m = n; // m은 n이라는 변수의 별명(Reference)
