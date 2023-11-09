@@ -14,12 +14,16 @@ public:
 	Point& SetP(Point P); // self-reference
 	Point& SetP(int x, int y);
 	double Dist(Point p); // Distance, 함수호출
+	
 	Point& ViewP(const char* s = NULL); // View Current Point// NULL은 프로토타입에서만 정의
 	Point& MoveP(int off_x, int off_y); // Move Point Position 
 	int& X() { return x; }; // private 영역에 맴버변수가 있을 경우, 외부영역에서 맴버변수를 확인하는 함수(단방향 - 값을 수정할 수 없음)
 	int& Y() { return y; };
 	//int& X1() { return x; }; // 참조를 활용하여 private 영역에 있는 맴범변수 수정하게 해줌.(양방향)
 	Point& operator+(Point p);
+	double operator*(Point p); // 두 점이 이루는 사각형의 넓이
+	Point& operator++(); // 선행 연산자
+	Point& operator++(int); // 후행 연산자
 };
 
 class Point3D : public Point
