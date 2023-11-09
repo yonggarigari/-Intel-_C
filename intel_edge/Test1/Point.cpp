@@ -17,9 +17,10 @@ Point& Point::SetP(int x, int y)
 	this->x = x; this->y = y; // 'this' 셀프포인터 사용. this -> x 의 x는 맴버변수를 지칭
 	return *this;
 }
-Point& operator+(Point p) // 두점 curP와 p의 +연산결과를 (새로운 Point로) 반환
+Point& Point::operator+(Point p) // 두점 curP와 p의 +연산결과를 (새로운 Point로) 반환
 {
-
+	Point *p1 = new Point(x + p.x, y + p.y);
+	return *p1;
 }
 Point& Point::ViewP(const char *s) // NULL은 프로토타입에서만 정의
 {

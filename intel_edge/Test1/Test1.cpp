@@ -17,12 +17,15 @@ int main()
 	printf("Point Move test..............\n");
 
 	printf("Point print...P1(%d %d)\n", p1.X(), p1.Y());
-	p1.X() = 15;
-	printf("Point print...P1(%d %d)\n", p1.X());
+	p1.X() = 10; p1.Y() = 10;
+	printf("Point print...)\n");  p1.ViewP("p1");
 
-	Point3D pp0, pp1(10, 20, 30);
+	Point p6 = p1 + p2;
+	printf("Point [Operater+]Test---"); p6.ViewP("_p6");
+	/*Point3D pp0, pp1(10, 20, 30);
 	double d = pp1.Dist3D(pp0);
 	double d1 = pp0.Dist(Point(10, 20));
 	printf("pp0(0,0,0)과 pp1(10,20,30)의 거리 : %f", d);
-	printf("pp0(0,0,0)과 p1(10,20)의 거리 : %f", d1);
+	printf("pp0(0,0,0)과 p1(10,20)의 거리 : %f", d1);*/
+
 }
