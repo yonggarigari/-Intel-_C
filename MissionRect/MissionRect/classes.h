@@ -11,24 +11,22 @@ public:
 	int y;
 	Point* p1 = NULL;
 
-	Point(int x1 = 0, int y1 = 0) : x(x1), y(y1)
+	Point(int x1 = 0, int y1 = 0) : x(x1), y(y1) // 생성자 
 	{
-		//std::cout << "Point 생성(" << x << "," << y << ")\n"; // 생성자 함수 실행시 표시
+		//std::cout << "Point 생성(" << x << "," << y << ")\n"; 
 	}
-	~Point()
+	~Point() // 소멸자 함수
 	{
-		//std::cout << "Point 소멸(" << x << "," << y << ")\n"; // 소멸자 함수 실행시 표시
+		//std::cout << "Point 소멸(" << x << "," << y << ")\n"; 
 		//if (p1 != NULL) delete p1; // 연산자 operator+ 에서 반환된 'new' 값  해제
 	}
 
-	double Dist(Point p);		// Distance
-	void Show(const char* s = NULL);  // View Current Point, s:Point name
-	void ShowEx(const char* s = NULL);  // View Current Point, no Linefeed
+	double Dist(Point p);		// 거리측정함수
+	void Show(const char* s = NULL);  // point 출력 함수, s:Point name
+	void ShowEx(const char* s = NULL);  // 들여쓰기 없는 point 출력 함수
 
 
 	Point& operator+(Point p);
-
-
 };
 
 class Rect
@@ -39,7 +37,7 @@ public:
 
 	Point LL, LR, UL, UR;
 
-	void Init()
+	void Init() // Init 는 클래스내부에서만 사용하는 호출 함수. 
 	{
 		LL = Point(MIN(p1.x, p2.x), MIN(p1.y, p2.y));
 		LR = Point(MAX(p1.x, p2.x), MIN(p1.y, p2.y));
@@ -48,11 +46,11 @@ public:
 
 	}
 	Rect(Point pp1, Point pp2) : p1(pp1), p2(pp2),
-		x1(pp1.x), y1(pp1.y), x2(pp2.x), y2(pp2.y)
+		x1(pp1.x), y1(pp1.y), x2(pp2.x), y2(pp2.y) // 매개변수가 point 일 경우, 생성자
 	{
 		Init();
 	}
-	Rect(int _x1 = 0, int _y1 = 0, int _x2 = 0, int _y2 = 0)
+	Rect(int _x1 = 0, int _y1 = 0, int _x2 = 0, int _y2 = 0) // 매개변수가 x,y좌표일 경우, 생성자
 	{
 		x1 = _x1; y1 = _y1;
 		x2 = _x2; y2 = _y2;
@@ -60,11 +58,11 @@ public:
 		p1 = Point(_x1, _y1);
 		p2 = Point(_x2, _y2);
 
-		Init(); // Init 는 클래스내부에서만 사용. 
+		Init(); 
 	}
 	double Area();
-	Rect& Show(const char* s);  // 형태 : Rect(p1(x,y), p2(x1,y1))
-	Rect operator+(Rect r); // reference 하는 이유 : 
+	Rect& Show(const char* s);  // 입력 형태 : Rect(p1(x,y), p2(x1,y1))
+	Rect& operator+(Rect r); 
 	Rect& operator-(Rect r);
 	double operator*(Rect r);
 

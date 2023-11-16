@@ -38,7 +38,7 @@ double Rect::Area() // 매개변수(argument) 없어도 됨
 	return (double)(ABS((p1.x - p2.x) * (p1.y - p2.y)));
 }
 
-Rect Rect::operator+(Rect r) // 참조(reference) 안 해도 되나 하면 좋으니 사용하자.
+Rect& Rect::operator+(Rect r) // 참조(reference) 안 해도 되나 하면 좋으니 사용하자.
 {
 	int x1 = MIN(MIN(this->x1, this->x2), MIN(r.x1, r.x2)); // 함수의 x1과 클래스 x1의 혼동이 올 수 있으므로 클래스 x1을 사용할 때는 this 포인터를 사용
 	//int rx1 = MIN(MIN(x1, x2), MIN(r.x1, r.x2)); // 그게 싫으면 함수의 x1을 다른 이름으로 변경
@@ -47,7 +47,7 @@ Rect Rect::operator+(Rect r) // 참조(reference) 안 해도 되나 하면 좋으니 사용하�
 	int y2 = MAX(MAX(this->y1, this->y2), MAX(r.y1, r.y2));
 
 	
-	return Rect(x1, y1, x2, y2); // 그냥 반환하면 지역변수로 값이 저장되므로 'new'을 이용해 동적할당 하는 것.
+	return *(new Rect(x1, y1, x2, y2)); // 그냥 반환하면 지역변수로 값이 저장되므로 'new'을 이용해 동적할당 하는 것.
 }
 Rect& Rect::operator-(Rect r)
 {
