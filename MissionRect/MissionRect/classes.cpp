@@ -53,26 +53,26 @@ Rect& Rect::operator-(Rect r)
 	int x1, x2, x3, x4;
 	int y1, y2, y3, y4;
 	Rect& rr = *this; // this 포인터를 rr로 참조함.(reference)
-	
+
 	if (rr.LR.x<r.LL.x || rr.LL.x>r.LR.x || rr.UL.y<r.LL.y || rr.LL.y>r.UL.y) // 겹치지 않는 조건
 	{
 		//return NULL; // NULL에 대한 참조는 없으므로 오류 발생.
 		return *(new Rect(0, 0, 0, 0)); // 0 Rect 반환
 	}
-		x1 = MIN(MIN(rr.x1, r.x2), MIN(r.x1, r.x2));
-		x2 = MAX(rr.LL.x, r.LL.x);
-		x3 = MIN(rr.LR.x, r.LR.x);
-		x4 = MAX(MAX(rr.x1, rr.x2), MAX(r.x1, r.x2));
-		
+	x1 = MIN(MIN(rr.x1, r.x2), MIN(r.x1, r.x2));
+	x2 = MAX(rr.LL.x, r.LL.x);
+	x3 = MIN(rr.LR.x, r.LR.x);
+	x4 = MAX(MAX(rr.x1, rr.x2), MAX(r.x1, r.x2));
 
-		y1 = MIN(MIN(rr.y1, rr.y2), MIN(r.y1, r.y2));
-		y2 = MIN(rr.UL.y, r.UL.y);
-		y3 = MAX(rr.LL.y, r.LL.y);
-		y4 = MAX(MAX(rr.y1, rr.y2), MAX(r.y1, r.y2));
 
-		return *(new Rect(x2, y2, x3, y3));
-		
-	
+	y1 = MIN(MIN(rr.y1, rr.y2), MIN(r.y1, r.y2));
+	y2 = MIN(rr.UL.y, r.UL.y);
+	y3 = MAX(rr.LL.y, r.LL.y);
+	y4 = MAX(MAX(rr.y1, rr.y2), MAX(r.y1, r.y2));
+
+	return *(new Rect(x2, y2, x3, y3));
+
+
 
 }
 double Rect::operator*(Rect r)
