@@ -13,12 +13,12 @@ public:
 
 	Point(int x1 = 0, int y1 = 0) : x(x1), y(y1)
 	{
-		std::cout << "Point 생성(" << x << "," << y << ")\n"; // 생성자 함수 실행시 표시
+		//std::cout << "Point 생성(" << x << "," << y << ")\n"; // 생성자 함수 실행시 표시
 	}
 	~Point()
 	{
-		std::cout << "Point 소멸(" << x << "," << y << ")\n"; // 소멸자 함수 실행시 표시
-		if (p1 != NULL) delete p1; // 연산자 operator+ 에서 반환된 'new' 값  해제
+		//std::cout << "Point 소멸(" << x << "," << y << ")\n"; // 소멸자 함수 실행시 표시
+		//if (p1 != NULL) delete p1; // 연산자 operator+ 에서 반환된 'new' 값  해제
 	}
 
 	double Dist(Point p);		// Distance
@@ -64,7 +64,7 @@ public:
 	}
 	double Area();
 	Rect& Show(const char* s);  // 형태 : Rect(p1(x,y), p2(x1,y1))
-	Rect& operator+(Rect r); // reference 하는 이유 : 
+	Rect operator+(Rect r); // reference 하는 이유 : 
 	Rect& operator-(Rect r);
 	double operator*(Rect r);
 
