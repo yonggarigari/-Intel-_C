@@ -35,7 +35,7 @@ public:
 		// 그냥 delete name하면 name에 값이 없어도 실행되므로 오류가 발생
 	}
 };
-class subject // (수학, 50)
+class subject // (수학, 50)/
 {
 private:
 	char* name = NULL;
