@@ -113,14 +113,15 @@ T ABS(T a)
 	else { return a; }*/
 }
 
+template<typename T>
 class Point
 {
 private: // default이긴 하나, 명시적으로 표시함.
 protected:
-	int x;
-	int y;
+	T x;
+	T y;
 public:
-	Point(int x1 = 0, int y1 = 0) : x(x1), y(y1)// 생성자 형성 (객체화 해주기 위해서 실시)
+	Point(T x1 = 0, T y1 = 0) : x(x1), y(y1)// 생성자 형성 (객체화 해주기 위해서 실시)
 	{
 	}
 	Point& SetP(Point P)
@@ -128,7 +129,7 @@ public:
 		x = P.x; y = P.y;
 		return *this;
 	}
-	Point& SetP(int x, int y)
+	Point& SetP(T x, T y)
 	{
 		this->x = x; this->y = y;
 		return *this;
@@ -146,13 +147,13 @@ public:
 		printf("%s(%d, %d)\n", s, x, y);
 		return *this;
 	}
-	Point& MoveP(int off_x, int off_y)
+	Point& MoveP(T off_x, T off_y)
 	{
 		this->x = x + off_x; this->y = y + off_y;
 		return *this;
 	}
-	int& X() { return x; }; 
-	int& Y() { return y; };
+	T& X() { return x; };
+	T& Y() { return y; };
 	//int& X1() { return x; }; // 참조를 활용하여 private 영역에 있는 맴범변수 수정하게 해줌.(양방향)
 	Point& operator+(Point p)
 	{
@@ -161,9 +162,9 @@ public:
 	}
 	double operator*(Point p)
 	{
-		int w = ABS(x - p.x);
-		int h = ABS(y - p.y);
-		double a = w * h;
+		T w = ABS(x - p.x);
+		T h = ABS(y - p.y);
+		T a = w * h;
 		return a;
 	}
 	Point& operator++() 
